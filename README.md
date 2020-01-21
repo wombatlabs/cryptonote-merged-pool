@@ -1,0 +1,1 @@
+# cryptonote-merged-pool
