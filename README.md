@@ -1,9 +1,8 @@
-cryptonote-merged-pool
+cryptonote-nodejs-pool
 ======================
 
 High performance Node.js (with native C addons) mining pool for CryptoNote based coins. Comes with lightweight example front-end script which uses the pool's AJAX API. Support for Cryptonight (Original, Monero v7, Stellite v7), Cryptonight Light (Original, Aeon v7, IPBC) and Cryptonight Heavy (Sumokoin) algorithms.
 
-**For original cryptonote-nodejs-pool use [orig](https://github.com/blockinator/cryptonote-merged-pool/tree/orig) branch.**
 
 #### Table of Contents
 * [Features](#features)
@@ -185,7 +184,7 @@ Explanation for each field:
 "poolHost": "your.pool.host",
 
 /* Used for storage in redis so multiple coins can share the same redis instance. */
-"coin": "graft", // Must match the parentCoin variable in config.js
+"coin": "graft",
 
 /* Used for front-end display */
 "symbol": "GRFT",
@@ -199,9 +198,6 @@ Explanation for each field:
 /* Coin network time to mine one block, see DIFFICULTY_TARGET constant in DAEMON_CODE/src/cryptonote_config.h */
 "coinDifficultyTarget": 120,
 
-"blockchainExplorer": "http://blockexplorer.arqma.com/block/{id}",  //used on blocks page to generate hyperlinks.
-"transactionExplorer": "http://blockexplorer.arqma.com/tx/{id}",    //used on the payments page to generate hyperlinks
-
 /* Set daemon type. Supported values: default, forknote (Fix block height + 1), bytecoin (ByteCoin Wallet RPC API) */
 "daemonType": "default",
 
@@ -214,8 +210,8 @@ Explanation for each field:
 "cnVariant": 1,
 "cnBlobType": 0,
 "includeHeight":false, /*true to include block.height in job to miner*/
-"includeAlgo":"cn/wow", /*wownero specific change to include algo in job to miner*/	"includeAlgo":"cn/wow", /*wownero specific change to include algo in job to miner*/
-"isRandomX": true,
+"includeAlgo":"cn/wow", /*wownero specific change to include algo in job to miner*/
+"isRandomX":"false", /*instruct pool to send seed during blob conversion*/
 /* Logging */
 "logging": {
 
@@ -239,24 +235,12 @@ Explanation for each field:
         "colors": true
     }
 },
-"childPools":[ {"poolAddress":"your wallet",
-                    "intAddressPrefix": null,
-                    "coin": "MCN",  	//must match COIN name in the child pools config.json
-                    "childDaemon": {
-                        "host": "127.0.0.1",
-                        "port": 26081
-                    },
-                    "pattern": "^Vdu",  //regex to identify which childcoin the miner specified in password. eg) Vdu is first 3 chars of a MCN wallet address.
-                    "blockchainExplorer": "https://explorer.mcn.green/?hash={id}#blockchain_block",
-                    "transactionExplorer": "https://explorer.mcn.green/?hash={id}#blockchain_transaction",
-                    "api": "https://multi-miner.smartcoinpool.net/apiMerged1",
-                    "enabled": true
-                    }
-]
+/*Which Hashing Package to use: cryptonight-hashing=false, multi-hashing=true*/
+"hashingUtil":false,
 /* Modular Pool Server */
 "poolServer": {
     "enabled": true,
-    "mergedMining":false,
+
     /* Set to "auto" by default which will spawn one process/fork/worker for each CPU
        core in your system. Each of these workers will run a separate instance of your
        pool(s), and the kernel will load balance miners using these forks. Optionally,
@@ -264,14 +248,11 @@ Explanation for each field:
     "clusterForks": "auto",
 
     /* Address where block rewards go, and miner payments come from. */
-    "poolAddress": "your wallet",
+    "poolAddress": "GBqRuitSoU3PFPBAkXMEnLdBRWXH4iDSD6RDxnQiEFjVJhWUi1UuqfV5EzosmaXgpPGE6JJQjMYhZZgWY8EJQn8jQTsuTit",
 
     /* This is the integrated address prefix used for miner login validation. */
     "intAddressPrefix": 91,
-    
-    /* This is the Subaddress prefix used for miner login validation. */
-    "subAddressPrefix": 252,
-    
+
     /* Poll RPC daemons for new blocks every this many milliseconds. */
     "blockRefreshInterval": 1000,
 
@@ -339,8 +320,6 @@ Explanation for each field:
     "paymentId": {
         "addressSeparator": ".", // Character separator between <address> and <paymentID>
         "validation": true // Refuse login if non alphanumeric characters in <paymentID>
-        "validations": ["1,16", "64"], //regex quantity. range 1-16 characters OR exactly 64 character
-        "ban": true  // ban the miner for invalid paymentid
     },
 
     /* Feature to trust share difficulties from miners which can
@@ -432,6 +411,7 @@ Explanation for each field:
 "wallet": {
     "host": "127.0.0.1",
     "port": 18982,
+    "username": "--rpc-username", //monero based wallet authentication
     "password": "--rpc-password"
 },
 
