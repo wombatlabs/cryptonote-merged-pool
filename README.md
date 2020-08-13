@@ -115,7 +115,7 @@ Usage
 #### Requirements
 * Coin daemon(s) (find the coin's repo and build latest version from source)
   * [List of Cryptonote coins](https://github.com/dvandal/cryptonote-nodejs-pool/wiki/Cryptonote-Coins)
-* [Node.js](http://nodejs.org/) v11.0+
+* [Node.js](http://nodejs.org/) v11.0+ (v11.15 works best)
   * For Ubuntu: 
  ```
   curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash
@@ -145,7 +145,7 @@ echo 1024 > /proc/sys/net/core/somaxconn
   * For Ubuntu: `sudo apt-get install libssl-dev`
 
 * Boost is required for the cryptoforknote-util module
-  * For Ubuntu: `sudo apt-get install libboost-all-dev`
+  * For Ubuntu: `sudo apt-get install libboost-all-dev libsodium-dev`
 
 
 ##### Seriously
