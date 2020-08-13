@@ -144,7 +144,7 @@ echo 1024 > /proc/sys/net/core/somaxconn
   * For Ubuntu: `sudo apt-get install libssl-dev`
 
 * Boost is required for the cryptoforknote-util module
-  * For Ubuntu: `sudo apt-get install libboost-all-dev`
+  * For Ubuntu: `sudo apt-get install libboost-all-dev libsodium-dev`
 
 
 ##### Seriously
