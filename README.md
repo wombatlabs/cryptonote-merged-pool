@@ -95,8 +95,8 @@ Features
 Community / Support
 ===
 
-* [GitHub Wiki](https://github.com/dvandal/cryptonote-nodejs-pool/wiki)
-* [GitHub Issues](https://github.com/dvandal/cryptonote-nodejs-pool/issues)
+* [GitHub Wiki](https://github.com/blockinator/cryptonote-merged-pool/wiki)
+* [GitHub Issues](https://github.com/blockinator/cryptonote-merged-pool/issues)
 * [Telegram Group](http://t.me/CryptonotePool)
 
 #### Pools Using This Software
@@ -114,7 +114,7 @@ Usage
 
 #### Requirements
 * Coin daemon(s) (find the coin's repo and build latest version from source)
-  * [List of Cryptonote coins](https://github.com/dvandal/cryptonote-nodejs-pool/wiki/Cryptonote-Coins)
+  * [List of Cryptonote coins](https://github.com/blockinator/cryptonote-merged-pool/wiki/Cryptonote-Coins)
 * [Node.js](http://nodejs.org/) v11.0+ (v11.15 works best)
   * For Ubuntu: 
  ```
@@ -169,7 +169,7 @@ sudo su - your-user
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
 ```bash
-git clone https://github.com/muscleman/cryptonote-nodejs-pool.git pool
+git clone https://github.com/blockinator/cryptonote-merged-pool.git pool
 cd pool
 
 npm update
