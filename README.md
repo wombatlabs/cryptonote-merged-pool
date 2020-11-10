@@ -5,6 +5,8 @@ High performance Node.js (with native C addons) mining pool for CryptoNote based
 
 ### **For original cryptonote-nodejs-pool use [orig](https://github.com/blockinator/cryptonote-merged-pool/tree/orig) branch.**
 
+### **For non-merged pool use [pre-merged](https://github.com/blockinator/cryptonote-merged-pool/tree/premerged) branch.**
+
 #### Table of Contents
 * [Features](#features)
 * [Community Support](#community--support)
@@ -122,7 +124,11 @@ Usage
   sudo apt-get install -y nodejs
  ```
   * Or use NVM(https://github.com/creationix/nvm) for debian/ubuntu.
-
+  
+  ```
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.3/install.sh | bash
+  nvm install v11.15.0
+  ```
 
 * [Redis](http://redis.io/) key-value store v2.6+ 
   * For Ubuntu: 
