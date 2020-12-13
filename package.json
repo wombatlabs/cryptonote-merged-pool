@@ -1,12 +1,12 @@
 {
-	"name": "cryptonote-nodejs-pool",
+	"name": "cryptonote-merged-pool",
 	"version": "1.4.0",
 	"license": "GPL-2.0",
 	"Original author": "Daniel Vandal",
 	"Maintained by": "Musclesonvacation",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/muscleman/cryptonote-nodejs-pool.git"
+		"url": "https://github.com/blockinator/cryptonote-merged-pool.git"
 	},
 	"dependencies": {
 		"async": "1",
