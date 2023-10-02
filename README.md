@@ -3,7 +3,7 @@ cryptonote-merged-pool
 
 High performance Node.js (with native C addons) mining pool for CryptoNote based coins. Comes with lightweight example front-end script which uses the pool's AJAX API. Support for Cryptonight (Original, Monero v7, Stellite v7), Cryptonight Light (Original, Aeon v7, IPBC) and Cryptonight Heavy (Sumokoin) algorithms.
 
-### **For non-merged pool use [pre-merged](https://github.com/blockinator/cryptonote-merged-pool/tree/premerged) branch.**
+### **For non-merged pool use [pre-merged](https://github.com/wombatlabs/cryptonote-merged-pool/tree/premerged) branch.**
 
 #### Table of Contents
 * [Features](#features)
@@ -95,8 +95,8 @@ Features
 Community / Support
 ===
 
-* [GitHub Wiki](https://github.com/blockinator/cryptonote-merged-pool/wiki)
-* [GitHub Issues](https://github.com/blockinator/cryptonote-merged-pool/issues)
+* [GitHub Wiki](https://github.com/wombatlabs/cryptonote-merged-pool/wiki)
+* [GitHub Issues](https://github.com/wombatlabs/cryptonote-merged-pool/issues)
 * [Telegram Group](http://t.me/CryptonotePool)
 
 #### Pools Using This Software
@@ -114,7 +114,7 @@ Usage
 
 #### Requirements
 * Coin daemon(s) (find the coin's repo and build latest version from source)
-  * [List of Cryptonote coins](https://github.com/blockinator/cryptonote-merged-pool/wiki/Cryptonote-Coins)
+  * [List of Cryptonote coins](https://github.com/wombatlabs/cryptonote-merged-pool/wiki/Cryptonote-Coins)
 * [Node.js](http://nodejs.org/) v11.0+ (v11.15 works best)
   * For Ubuntu: 
  ```
@@ -173,7 +173,7 @@ sudo su - your-user
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
 ```bash
-git clone https://github.com/blockinator/cryptonote-merged-pool.git pool
+git clone https://github.com/wombatlabs/cryptonote-merged-pool.git pool
 cd pool
 
 npm update
@@ -648,7 +648,7 @@ node init.js -module=api
 [Example screenshot](http://i.imgur.com/SEgrI3b.png) of running the pool in single module mode with tmux.
 
 To keep your pool up, on operating system with systemd, you can create add your pool software as a service.  
-Use this [example](https://github.com/blockinator/cryptonote-merged-pool/blob/master/deployment/cryptonote-merged-pool.service) to create the systemd service `/lib/systemd/system/cryptonote-nodejs-pool.service`
+Use this [example](https://github.com/wombatlabs/cryptonote-merged-pool/blob/master/deployment/cryptonote-merged-pool.service) to create the systemd service `/lib/systemd/system/cryptonote-nodejs-pool.service`
 Then enable and start the service with the following commands : 
 
 ```

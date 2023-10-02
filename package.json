@@ -6,7 +6,7 @@
 	"Maintained by": "Musclesonvacation",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/blockinator/cryptonote-merged-pool.git"
+		"url": "https://github.com/wombatlabs/cryptonote-merged-pool.git"
 	},
 	"dependencies": {
 		"async": "1",
